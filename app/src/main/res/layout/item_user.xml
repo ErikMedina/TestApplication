@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/card"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:layout_margin="10dp"
+  android:background="@color/colorAccent"
+  android:orientation="vertical">
+
+  <TextView
+    android:id="@+id/tv_tag_name"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Name: " />
+  <TextView
+    android:id="@+id/tv_name"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_toRightOf="@id/tv_tag_name"
+    tools:text="Erik Medina" />
+  <TextView
+    android:id="@+id/tv_tag_email"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/tv_tag_name"
+    android:text="Email: " />
+  <TextView
+    android:id="@+id/tv_email"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/tv_name"
+    android:layout_toRightOf="@id/tv_tag_email"
+    tools:text="erik.medina@gmail.com" />
+  <TextView
+    android:id="@+id/tv_tag_phone"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/tv_tag_email"
+    android:text="Phone: " />
+  <TextView
+    android:id="@+id/tv_phone"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/tv_email"
+    android:layout_toRightOf="@id/tv_tag_email"
+    tools:text="916478523658" />
+
+  <Button
+    android:id="@+id/b_remove_user"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/tv_tag_phone"
+    android:text="Remove" />
+
+  <ImageView
+    android:id="@+id/iv_picture"
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+    android:layout_margin="10dp"
+    android:layout_alignParentRight="true" />
+
+  <Button
+    android:id="@+id/b_favourite"
+    android:textStyle="bold"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:layout_alignParentRight="true"
+    android:layout_below="@id/iv_picture"
+    android:text="Favourite"
+    android:textColor="@color/green" />
+</RelativeLayout>
