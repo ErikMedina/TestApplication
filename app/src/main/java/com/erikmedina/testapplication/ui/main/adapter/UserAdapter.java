@@ -14,6 +14,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import com.erikmedina.testapplication.R;
 import com.erikmedina.testapplication.model.Result;
+import com.erikmedina.testapplication.ui.main.adapter.UserAdapter.ItemHolder;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,7 +22,7 @@ import java.util.List;
  * Created by erik on 18/03/17.
  */
 
-public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
+public class UserAdapter extends RecyclerView.Adapter<ItemHolder> {
 
   public interface OnItemListener {
 
@@ -45,13 +46,13 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
   }
 
   @Override
-  public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+  public ItemHolder onCreateViewHolder(ViewGroup parent, int viewType) {
     View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_user, parent, false);
-    return new ViewHolder(view, context);
+    return new ItemHolder(view, context);
   }
 
   @Override
-  public void onBindViewHolder(ViewHolder holder, int position) {
+  public void onBindViewHolder(ItemHolder holder, int position) {
     holder.bind(onItemListener);
     Result result = results.get(position);
     holder.tvName.setText(result.getName().getFirst());
@@ -64,7 +65,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
     return results.size();
   }
 
-  static class ViewHolder extends RecyclerView.ViewHolder {
+  static class ItemHolder extends RecyclerView.ViewHolder {
 
     @BindView(R.id.card)
     RelativeLayout card;
@@ -80,7 +81,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
     Button bFavouriteUser;
     Context context;
 
-    public ViewHolder(View itemView, Context context) {
+    public ItemHolder(View itemView, Context context) {
       super(itemView);
       ButterKnife.bind(this, itemView);
       this.context = context;
